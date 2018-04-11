@@ -7,12 +7,11 @@ Folder Structure
 +--CodeIgniter4
    |
    +---application
-       |
-	   +--- ....
-	   +--- Smarty
-	   +--- ....
-   
-
+       |
+       +--- ....
+	+--- Smarty
+	+--- ....
+	
 Configuration
 ---------------------
 
@@ -21,8 +20,6 @@ set variable in file Config.php
 public $templateDir = APPPATH . 'views';
 public $compileDir = APPPATH . 'views/templates_c';		
 public $configDir = APPPATH . 'views/configs';
-public $cacheDir = APPPATH . 'views/cache';
-
 
 Example: #1 
 ---------------------
