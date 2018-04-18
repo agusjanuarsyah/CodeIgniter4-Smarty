@@ -3,25 +3,27 @@
 Using Smarty Template Engine in CodeIgniter4
 
 ## Folder Structure
-'''
+```
 +--CodeIgniter4
    |
    +---application
        |
        +--- ....
 	+--- Smarty
-	+--- ....
+	+---
 	
+	
+```
 ## Configuration
 set variable in file Config.php
-'''
+```
 public $templateDir = APPPATH . 'views';
 public $compileDir = APPPATH . 'views/templates_c';		
 public $configDir = APPPATH . 'views/configs';
-'''
+```
 
 ## Example: #1 
-'''
+```
 <?php namespace App\Controllers;
 
 use CodeIgniter\Controller;
@@ -64,9 +66,9 @@ class Home extends Controller
 		
 	}
 }
-'''
+```
 ## Example: #2 
-'''
+```
 <?php namespace App\Controllers;
 
 use CodeIgniter\Controller;
@@ -100,5 +102,5 @@ class Home extends Controller
 		
 	}
 }
-'''
+```
 Enjoyed....
