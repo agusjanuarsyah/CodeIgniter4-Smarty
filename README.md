@@ -4,21 +4,21 @@ Using Smarty Template Engine in CodeIgniter4
 
 ## Folder Structure
 ```
-+--CodeIgniter4
++-- CodeIgniter4
    |
-   +---application
+   +-- application
        |
        +--- ....
-	+--- Smarty
-	+---
-	
-	
+       +--- Smarty
+       +--- ....	
 ```
+
 ## Configuration
 set variable in file Config.php
 ```
 public $templateDir = APPPATH . 'views';
-public $compileDir = APPPATH . 'views/templates_c';		
+public $compileDir = APPPATH . 'views/templates_c';	
+public $cacheDir = APPPATH . 'views/caches';
 public $configDir = APPPATH . 'views/configs';
 ```
 
@@ -29,7 +29,6 @@ public $configDir = APPPATH . 'views/configs';
 use CodeIgniter\Controller;
 
 use App\Smarty\Smarty;
-
 class Home extends Controller
 {
 	private $smarty;
@@ -46,23 +45,6 @@ class Home extends Controller
 										
 		return $this->smarty->view('index.tpl');
 		
-		// $data = [
-			// "Name" => "Fred Irving Johnathan Bradley Peppergill",
-			// "FirstName" => [
-				// "John", 
-				// "Mary", 
-				// "James", 
-				// "Henry"
-			// ],
-			// "LastName" => [
-				// "Doe", 
-				// "Smith", 
-				// "Johnson", 
-				// "Case"
-			// ],
-		// ];
-		
-		// echo smarty('index.tpl', $data);
 		
 	}
 }
@@ -72,7 +54,6 @@ class Home extends Controller
 <?php namespace App\Controllers;
 
 use CodeIgniter\Controller;
-
 require_once( APPPATH.'Smarty/Common.php' );
 
 class Home extends Controller
