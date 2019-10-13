@@ -20,10 +20,13 @@ class Smarty extends \Smarty
 		$this->config_dir = $this->config->configDir;
 		$this->cache_dir = $this->config->cacheDir;
 		
-		$this->assign( 'APPPATH', APPPATH );
-		$this->assign( 'BASEPATH', BASEPATH );
-
-		
+		/*$this->assign( 'APPPATH', APPPATH );
+		$this->assign( 'BASEPATH', BASEPATH );*/
+		$this->assign([
+		    'APPPATH' => APPPATH,
+		    'ROOTPATH' => ROOTPATH
+		]);
+			
 		$this->force_compile = true;
 		$this->caching = \Smarty::CACHING_LIFETIME_CURRENT;
 		$this->cache_lifetime = 520;
@@ -32,16 +35,17 @@ class Smarty extends \Smarty
 	
 	public function view(string $view, array $options = null) 
 	{
-		$result = $this->fetch($view);
-			
-		return $result;
+		return $this->fetch($view);
 	}
 	
 	public function setData(array $data = [])
 	{
-		foreach ($data as $key => $value)
+		/*foreach ($data as $key => $value)
 		{
 			$this->assign($key, $value);
+		}*/
+		if (!empty($data)) {
+			$this->assign($data);
 		}
 		
 		return $this;
