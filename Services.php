@@ -2,7 +2,7 @@
 
 use CodeIgniter\Config\Services as CoreServices;
 
-require_once( BASEPATH.'Config/Services.php' );
+require_once(APPPATH.'Config/Services.php');
 
 /**
  * Services Configuration file.
